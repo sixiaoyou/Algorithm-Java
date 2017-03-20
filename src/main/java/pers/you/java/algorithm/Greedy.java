@@ -28,7 +28,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.hadoop.hive.metastore.api.ThriftHiveMetastore.list_privileges_result;
 
 public class Greedy {
 	
