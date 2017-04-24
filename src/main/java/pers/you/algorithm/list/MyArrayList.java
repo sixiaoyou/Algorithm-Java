@@ -91,7 +91,12 @@ public class MyArrayList implements IList{
 	    if( i<0 ){
 	        return false;
 	    }
-	    insert(i, e);
+	    try {
+            insert(i, e);
+        } catch (OutOfBoundaryException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
 	    return true;
 	}
 	
@@ -101,7 +106,12 @@ public class MyArrayList implements IList{
 	    if( i<0 ){
 	        return false;
 	    }
-	    insert(i+1, e);
+	    try {
+            insert(i+1, e);
+        } catch (OutOfBoundaryException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
 	    return true;
 	}
 	
