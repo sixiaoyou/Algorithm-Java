@@ -9,18 +9,18 @@ public class TestList {
     @SuppressWarnings("unused")
     @Test
     public void testNode01(){
-        ListNode02<Integer> p4 = new ListNode02<Integer>(4,null);
-        ListNode02<Integer> p3 = new ListNode02<Integer>(3,p4);
-        ListNode02<Integer> p2 = new ListNode02<Integer>(2,p3);
-        ListNode02<Integer> p1 = new ListNode02<Integer>(1,p2);
+        ListNode3<Integer> p4 = new ListNode3<Integer>(4,null);
+        ListNode3<Integer> p3 = new ListNode3<Integer>(3,p4);
+        ListNode3<Integer> p2 = new ListNode3<Integer>(2,p3);
+        ListNode3<Integer> p1 = new ListNode3<Integer>(1,p2);
     }
     
     
     @SuppressWarnings("unused")
     @Test
     public void testNode02(){
-        ListNode02<Integer> p1 = new ListNode02<Integer>(1,new ListNode02<Integer>(2,
-                new ListNode02<Integer>(3,new ListNode02<Integer>(4,null))));
+        ListNode3<Integer> p1 = new ListNode3<Integer>(1,new ListNode3<Integer>(2,
+                new ListNode3<Integer>(3,new ListNode3<Integer>(4,null))));
     }
     
     @Test

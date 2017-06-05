@@ -10,15 +10,15 @@ public class IntersectionOfTwoLinkedLists {
     public void test01() {
         int[] array1 = { 1, 2, 3, 4, 5, 6, 7, 8 };
         int[] array2 = { 9, 10 };
-        ListNode[] heads = ListNode.arrayToIntersection(array1, array2, 5);
-        ListNode.printList(heads[0]);
-        ListNode.printList(heads[1]);
+        ListNode2[] heads = ListNode2.arrayToIntersection(array1, array2, 5);
+        ListNode2.printList(heads[0]);
+        ListNode2.printList(heads[1]);
 
     }
 
-    public ListNode bruteForce(ListNode headA, ListNode headB) {
-        for (ListNode p = headA; p != null; p = p.next) {
-            for (ListNode q = headB; q != null; q = q.next) {
+    public ListNode2 bruteForce(ListNode2 headA, ListNode2 headB) {
+        for (ListNode2 p = headA; p != null; p = p.next) {
+            for (ListNode2 q = headB; q != null; q = q.next) {
                 if (p == q) {
                     return p;
                 }
@@ -27,12 +27,12 @@ public class IntersectionOfTwoLinkedLists {
         return null;
     }
 
-    public ListNode hashFunction(ListNode headA, ListNode headB) {
-        HashSet<ListNode> hashSet = new HashSet<ListNode>();
-        for (ListNode p = headB; p != null; p = p.next) {
+    public ListNode2 hashFunction(ListNode2 headA, ListNode2 headB) {
+        HashSet<ListNode2> hashSet = new HashSet<ListNode2>();
+        for (ListNode2 p = headB; p != null; p = p.next) {
             hashSet.add(p);
         }
-        for (ListNode p = headA; p != null; p = p.next) {
+        for (ListNode2 p = headA; p != null; p = p.next) {
             if (hashSet.contains(p)) {
                 return p;
             }
@@ -44,15 +44,15 @@ public class IntersectionOfTwoLinkedLists {
     public void test02() {
         int[] array1 = { 1, 2, 3, 4, 5, 6, 7, 8 };
         int[] array2 = { 9, 10 };
-        ListNode[] heads = ListNode.arrayToIntersection(array1, array2, 5);
-        ListNode head = hashFunction(heads[0], heads[1]);
+        ListNode2[] heads = ListNode2.arrayToIntersection(array1, array2, 5);
+        ListNode2 head = hashFunction(heads[0], heads[1]);
         System.out.println(head.val);
-        head = hashFunction(ListNode.arrayToList(array1), ListNode.arrayToList(array2));
+        head = hashFunction(ListNode2.arrayToList(array1), ListNode2.arrayToList(array2));
         System.out.println(head);
     }
 
-    public int lengthOfList(ListNode head) {
-        ListNode p = head;
+    public int lengthOfList(ListNode2 head) {
+        ListNode2 p = head;
         int n = 0;
         while (p != null) {
             n++;
@@ -61,15 +61,15 @@ public class IntersectionOfTwoLinkedLists {
         return n;
     }
 
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    public ListNode2 getIntersectionNode(ListNode2 headA, ListNode2 headB) {
         int m = lengthOfList(headA);
         int n = lengthOfList(headB);
         if (m == 0 || n == 0) {
             return null;
         } else {
             int k;
-            ListNode p = headA;
-            ListNode q = headB;
+            ListNode2 p = headA;
+            ListNode2 q = headB;
             if (m > n) {
                 k = m - n;
                 for (int i = 1; i <= k; i++) {
@@ -97,10 +97,10 @@ public class IntersectionOfTwoLinkedLists {
     public void test03() {
         int[] array1 = { 1, 2, 3, 4, 5, 6, 7, 8 };
         int[] array2 = { 9, 10 };
-        ListNode[] heads = ListNode.arrayToIntersection(array1, array2, 5);
-        ListNode head =getIntersectionNode(heads[0], heads[1]);
+        ListNode2[] heads = ListNode2.arrayToIntersection(array1, array2, 5);
+        ListNode2 head =getIntersectionNode(heads[0], heads[1]);
         System.out.println(head.val);
-        head = getIntersectionNode(ListNode.arrayToList(array1), ListNode.arrayToList(array2));
+        head = getIntersectionNode(ListNode2.arrayToList(array1), ListNode2.arrayToList(array2));
         System.out.println(head);
     }
 

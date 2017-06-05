@@ -3,12 +3,12 @@ package pers.you.algorithm.listnode;
 import org.junit.Test;
 
 public class LinkedListCycle02 {
-    public ListNode detectCycle(ListNode head) {
+    public ListNode2 detectCycle(ListNode2 head) {
         if (head == null) {
             return null;
         } else {
-            ListNode slow = head;
-            ListNode fast = head;
+            ListNode2 slow = head;
+            ListNode2 fast = head;
             while (fast != null && fast.next != null) {
                 slow = slow.next;
                 fast = fast.next.next;
@@ -32,11 +32,11 @@ public class LinkedListCycle02 {
     @Test
     public void test(){
         int[] array = {1,2,3,4,5,6,7};
-        ListNode head = ListNode.arrayToList(array);
+        ListNode2 head = ListNode2.arrayToList(array);
         System.out.println(detectCycle(head));
-        head=ListNode.arrayToCircle(array);
+        head=ListNode2.arrayToCircle(array);
         System.out.println(detectCycle(head).val);
-        head=ListNode.createCycle(array, 3);
+        head=ListNode2.createCycle(array, 3);
         System.out.println(detectCycle(head).val);           
     }
 
